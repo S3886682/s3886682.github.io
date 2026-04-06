@@ -1,0 +1,508 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+  .lbl-root {
+    background: #f0ede6;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #111;
+    padding: 0;
+    min-height: 100vh;
+  }
+  .lbl-header {
+    border-bottom: 1.5px solid #111;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .lbl-badge {
+    border: 1px solid #111;
+    padding: 2px 6px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+  .lbl-badge.red { background: #d03030; color: #fff; border-color: #d03030; }
+
+  .lbl-hero {
+    border-bottom: 1.5px solid #111;
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+  .lbl-hero-left {
+    padding: 20px 16px 16px;
+    border-right: 1.5px solid #111;
+  }
+  .lbl-reg-marks {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
+    align-items: center;
+  }
+  .reg-circle {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    border: 1px solid #111;
+  }
+  .lbl-name-block {
+    margin-bottom: 12px;
+  }
+  .lbl-name-sm {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    display: block;
+    margin-bottom: 0;
+  }
+  .lbl-name-lg {
+    font-family: 'Space Mono', monospace;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    display: block;
+  }
+  .lbl-name-lg.accent { color: #d03030; }
+  .lbl-sku-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .lbl-tag {
+    border: 1px solid #111;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+  }
+  .lbl-tag.filled { background: #111; color: #f0ede6; }
+  .lbl-tag.red { background: #d03030; color: #fff; border-color: #d03030; }
+  .lbl-subtitle {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 10px;
+    line-height: 1.7;
+  }
+  .lbl-avail {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .avail-dot { width: 6px; height: 6px; background: #2a9d5a; border-radius: 50%; display: inline-block; }
+
+  .lbl-hero-right {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-width: 120px;
+  }
+  .lbl-serial {
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    text-align: right;
+    opacity: 0.5;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+  .lbl-stamp {
+    border: 2.5px solid #2a9d5a;
+    color: #2a9d5a;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    padding: 4px 8px;
+    text-transform: uppercase;
+    transform: rotate(-8deg);
+    display: inline-block;
+  }
+
+  .lbl-barcode {
+    height: 28px;
+    display: flex;
+    gap: 1.5px;
+    align-items: stretch;
+    margin-top: 8px;
+  }
+  .bc-bar { background: #111; }
+
+  .lbl-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .lbl-section {
+    border-right: 1.5px solid #111;
+    border-bottom: 1.5px solid #111;
+    padding: 12px 14px;
+  }
+  .lbl-section:last-child { border-right: none; }
+  .lbl-section-label {
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.45;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sec-num { opacity: 0.3; }
+  .lbl-entry {
+    margin-bottom: 8px;
+  }
+  .lbl-entry-key {
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.45;
+    display: block;
+    margin-bottom: 1px;
+  }
+  .lbl-entry-val {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    display: block;
+    line-height: 1.3;
+  }
+  .lbl-entry-val.sm { font-size: 10px; font-weight: 400; }
+  .lbl-entry-val.red { color: #d03030; }
+
+  .lbl-project {
+    border-bottom: 1.5px solid #111;
+  }
+  .lbl-project-header {
+    border-bottom: 1px solid #111;
+    padding: 8px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+  .lbl-project-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .lbl-proj-left {
+    border-right: 1.5px solid #111;
+    padding: 14px;
+  }
+  .lbl-proj-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .lbl-proj-title .sub { color: #d03030; }
+  .lbl-proj-title .muted { opacity: 0.4; }
+  .lbl-proj-desc {
+    font-size: 9px;
+    line-height: 1.6;
+    opacity: 0.65;
+    margin-top: 8px;
+    letter-spacing: 0.04em;
+  }
+  .lbl-proj-spec {
+    margin-top: 10px;
+    border-top: 1px solid #111;
+    padding-top: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .lbl-proj-right {
+    padding: 14px 12px;
+  }
+  .lbl-mini-badge {
+    border: 1px solid #111;
+    padding: 2px 5px;
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 4px;
+    margin-right: 3px;
+  }
+  .lbl-mini-badge.green { border-color: #2a9d5a; color: #2a9d5a; }
+  .lbl-mini-badge.blue { border-color: #1a6db5; color: #1a6db5; }
+
+  .lbl-contact {
+    border-bottom: 1.5px solid #111;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .lbl-contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .lbl-contact-key {
+    font-size: 7px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.4;
+  }
+  .lbl-contact-val {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+
+  .lbl-footer {
+    padding: 8px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.4;
+  }
+  .lbl-qr {
+    width: 32px; height: 32px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+  }
+  .qr-cell { background: #111; border-radius: 0; }
+  .qr-cell.w { background: transparent; }
+</style>
+
+<div class="lbl-root">
+
+  <div class="lbl-header">
+    <div style="display:flex;gap:10px;align-items:center;">
+      <span class="lbl-badge red">V1.0</span>
+      <span>MELBOURNE · AU</span>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <svg width="12" height="12" viewBox="0 0 12 12" style="opacity:0.5"><circle cx="6" cy="6" r="5" stroke="#111" stroke-width="1" fill="none"/><line x1="6" y1="1" x2="6" y2="11" stroke="#111" stroke-width="0.5"/><line x1="1" y1="6" x2="11" y2="6" stroke="#111" stroke-width="0.5"/></svg>
+      <span>ASHLEYMCKINN@GMAIL.COM</span>
+    </div>
+  </div>
+
+  <div class="lbl-hero">
+    <div class="lbl-hero-left">
+      <div class="lbl-reg-marks">
+        <div class="reg-circle"></div>
+        <div class="reg-circle"></div>
+        <div class="reg-circle" style="background:#d03030;border-color:#d03030"></div>
+        <span style="font-size:8px;letter-spacing:0.1em;opacity:0.4;text-transform:uppercase;margin-left:4px;">REG MARK</span>
+      </div>
+      <div class="lbl-name-block">
+        <span class="lbl-name-sm">SUBJECT-001</span>
+        <span class="lbl-name-lg">ASHLEY</span>
+        <span class="lbl-name-lg accent">MCKINNON</span>
+      </div>
+      <div class="lbl-sku-row">
+        <span class="lbl-tag filled">AZURE</span>
+        <span class="lbl-tag filled">CLOUD PLATFORM</span>
+        <span class="lbl-tag red">CI/CD</span>
+        <span class="lbl-tag">IAC</span>
+        <span class="lbl-tag">DEVOPS</span>
+        <span class="lbl-tag">BICEP</span>
+        <span class="lbl-tag">POWERSHELL</span>
+        <span class="lbl-tag">ENTRA ID</span>
+        <span class="lbl-tag">CLIMBING</span>
+      </div>
+      <div class="lbl-subtitle">
+        AZURE CLOUD PLATFORM ENGINEER · AUSTRALIAN BUREAU OF STATISTICS · BRUNSWICK VIC
+      </div>
+      <div class="lbl-avail">
+        <span class="avail-dot"></span>
+        AVAILABLE FOR GRAD OPPORTUNITIES &nbsp;·&nbsp; BA INFORMATION TECHNOLOGY · RMIT · FINAL YEAR
+      </div>
+    </div>
+    <div class="lbl-hero-right">
+      <div class="lbl-serial">
+        NAPF-09892985<br>ESTIMATED (30)<br>NA ACTIVE<br>2025
+      </div>
+      <div>
+        <div class="lbl-stamp">ACTIVE</div>
+        <div class="lbl-barcode" style="margin-top:10px;">
+          <div class="bc-bar" style="width:2px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:3px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:2px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:4px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:2px"></div><div class="bc-bar" style="width:2px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:3px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:2px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:2px"></div><div class="bc-bar" style="width:3px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:2px"></div><div class="bc-bar" style="width:1px"></div>
+        </div>
+        <div style="font-size:7px;letter-spacing:0.08em;opacity:0.35;margin-top:3px;">0100101001100</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lbl-body">
+    <div class="lbl-section">
+      <div class="lbl-section-label"><span>001 · WHO</span><span class="sec-num">BRUNSWICK, VIC</span></div>
+      <div class="lbl-entry">
+        <span class="lbl-entry-key">CURRENT ROLE</span>
+        <span class="lbl-entry-val">Junior Azure Cloud Engineer</span>
+      </div>
+      <div class="lbl-entry">
+        <span class="lbl-entry-key">ORGANISATION</span>
+        <span class="lbl-entry-val">Australian Bureau of Statistics</span>
+      </div>
+      <div class="lbl-entry">
+        <span class="lbl-entry-key">FUNCTION</span>
+        <span class="lbl-entry-val sm">Platform Engineering · Entra Identity Management</span>
+      </div>
+      <div class="lbl-entry">
+        <span class="lbl-entry-key">BACKGROUND</span>
+        <span class="lbl-entry-val sm">Baker → pastry chef → bakery manager, 8 yrs. Career change to cloud engineering.</span>
+      </div>
+      <div class="lbl-entry">
+        <span class="lbl-entry-key">STUDY</span>
+        <span class="lbl-entry-val sm">Final-year IT · RMIT · GPA 4.0 · Dean's List</span>
+      </div>
+      <div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap;">
+        <span style="font-size:7px;letter-spacing:0.08em;opacity:0.4;">ADVERSE EVENTS</span>
+        <span style="font-size:7px;letter-spacing:0.08em;opacity:0.4;">N/A</span>
+        <span style="font-size:7px;letter-spacing:0.08em;opacity:0.4;">·</span>
+        <span style="font-size:7px;letter-spacing:0.08em;opacity:0.4;">BOULDERING · MTB · SNOWBOARD</span>
+      </div>
+    </div>
+
+    <div class="lbl-section" style="border-right:none;">
+      <div class="lbl-section-label"><span>002 · STACK</span><span class="sec-num">PRODUCTION</span></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div class="lbl-entry">
+          <span class="lbl-entry-key">IaC</span>
+          <span class="lbl-entry-val sm">Bicep · Terraform · ARM</span>
+        </div>
+        <div class="lbl-entry">
+          <span class="lbl-entry-key">SCRIPTING</span>
+          <span class="lbl-entry-val sm">PowerShell</span>
+        </div>
+        <div class="lbl-entry">
+          <span class="lbl-entry-key">PIPELINES</span>
+          <span class="lbl-entry-val sm">Azure DevOps CI/CD</span>
+        </div>
+        <div class="lbl-entry">
+          <span class="lbl-entry-key">IDENTITY</span>
+          <span class="lbl-entry-val sm">Entra ID · PIM · RBAC</span>
+        </div>
+        <div class="lbl-entry">
+          <span class="lbl-entry-key">API</span>
+          <span class="lbl-entry-val sm">Microsoft Graph</span>
+        </div>
+        <div class="lbl-entry">
+          <span class="lbl-entry-key">CLEARANCE</span>
+          <span class="lbl-entry-val sm red">Baseline</span>
+        </div>
+      </div>
+      <div style="border-top:1px solid #11111140;margin-top:10px;padding-top:8px;">
+        <span class="lbl-entry-key" style="display:block;margin-bottom:4px;">KEY METRIC</span>
+        <span style="font-size:10px;letter-spacing:0.04em;">Fn App pipeline: <strong>35 min → &lt;3 min</strong></span>
+      </div>
+      <div class="lbl-barcode" style="margin-top:10px;height:20px;">
+        <div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:3px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:2px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:3px"></div><div class="bc-bar" style="width:2px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:2px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:4px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:2px"></div><div class="bc-bar" style="width:3px"></div><div class="bc-bar" style="width:1px"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lbl-project">
+    <div class="lbl-project-header">
+      <span>003 · PROJECT</span>
+      <span>FROGFINDER · CAPSTONE · RMIT</span>
+    </div>
+    <div class="lbl-project-body">
+      <div class="lbl-proj-left">
+        <div class="lbl-proj-title">FROG<br><span class="sub">FINDER</span><br><span class="muted">MFCC</span></div>
+        <div class="lbl-proj-desc">
+          Platform-agnostic application for automated classification of Australian frog species from environmental audio recordings. <strong>Inference runs on-device</strong> — no server dependency — built to assist researchers track frog populations over time.
+        </div>
+        <div class="lbl-proj-spec">
+          <div class="lbl-entry">
+            <span class="lbl-entry-key">ROLE</span>
+            <span class="lbl-entry-val sm">Tech Lead · Scrum Master</span>
+          </div>
+          <div class="lbl-entry">
+            <span class="lbl-entry-key">ACCURACY</span>
+            <span class="lbl-entry-val sm red">95.2%</span>
+          </div>
+          <div class="lbl-entry">
+            <span class="lbl-entry-key">FRONTEND</span>
+            <span class="lbl-entry-val sm">React Native · Expo</span>
+          </div>
+          <div class="lbl-entry">
+            <span class="lbl-entry-key">ML</span>
+            <span class="lbl-entry-val sm">MFCC · SVM · Meyda</span>
+          </div>
+        </div>
+      </div>
+      <div class="lbl-proj-right">
+        <div class="lbl-section-label" style="margin-bottom:10px;"><span>STACK</span><span class="sec-num">ON-DEVICE</span></div>
+        <div>
+          <span class="lbl-mini-badge green">EXPO ROUTER</span>
+          <span class="lbl-mini-badge green">NATIVEWIND</span>
+          <span class="lbl-mini-badge green">MEYDA</span>
+          <span class="lbl-mini-badge">EXPO AV</span>
+          <span class="lbl-mini-badge">ASYNCSTORAGE</span>
+          <span class="lbl-mini-badge blue">SUPABASE</span>
+          <span class="lbl-mini-badge blue">POSTGRESQL</span>
+          <span class="lbl-mini-badge">PYTHON/SKLEARN</span>
+        </div>
+        <div style="margin-top:12px;border-top:1px solid #11111130;padding-top:10px;">
+          <span class="lbl-entry-key" style="display:block;margin-bottom:4px;">HEATMAP SPECIMEN</span>
+          <div style="background:#111;padding:6px;border-radius:2px;display:inline-block;">
+            <div style="font-size:7px;color:#ccc;letter-spacing:0.05em;margin-bottom:4px;">POBBLEBONK · 13 COEFF × 60 FRAMES</div>
+            <div style="display:grid;grid-template-columns:repeat(30,4px);gap:1px;">
+              <script>
+                const colors=['#0d0887','#41049d','#6a00a8','#8f0da4','#b12a90','#cc4778','#e16462','#f2844b','#fca636','#fcce25'];
+                const cells=document.currentScript.parentElement;
+                for(let i=0;i<390;i++){
+                  const d=document.createElement('div');
+                  d.style.cssText=`width:4px;height:3px;background:${colors[Math.floor(Math.random()*colors.length)]};`;
+                  cells.appendChild(d);
+                }
+              </script>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:10px;">
+          <span class="lbl-entry-key" style="display:block;margin-bottom:3px;">STATUS</span>
+          <span class="lbl-stamp" style="font-size:8px;padding:3px 7px;">WK-6 GATE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lbl-contact">
+    <div class="lbl-contact-item">
+      <span class="lbl-contact-key">Email</span>
+      <span class="lbl-contact-val">ASHLEYMCKINN@GMAIL.COM</span>
+    </div>
+    <div class="lbl-contact-item" style="align-items:center;">
+      <div class="lbl-barcode" style="height:22px;">
+        <div class="bc-bar" style="width:2px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:3px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:2px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:3px"></div><div class="bc-bar" style="width:2px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:2px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:3px"></div><div class="bc-bar" style="width:1px"></div><div class="bc-bar" style="width:2px"></div>
+      </div>
+      <div style="font-size:7px;letter-spacing:0.06em;opacity:0.35;margin-top:2px;">RAAVH74-MCK</div>
+    </div>
+    <div class="lbl-contact-item" style="align-items:flex-end;">
+      <span class="lbl-contact-key">LinkedIn</span>
+      <span class="lbl-contact-val">LINKEDIN.COM/IN/ASHLEY-MCKINN</span>
+    </div>
+  </div>
+
+  <div class="lbl-footer">
+    <span>DYSTROPHIN · RAAVH74 · IRUSCU (EXTENSOR DIGITOURUM)</span>
+    <span>MCK · INTERNAL · A01</span>
+    <span>815</span>
+  </div>
+</div>

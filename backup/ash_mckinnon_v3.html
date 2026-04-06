@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ash McKinnon</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=Big+Shoulders+Display:wght@900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page">
+  <!-- NAV -->
+  <nav>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span class="nav-tag">v1.0</span>
+      <span style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;">Melbourne, AU</span>
+    </div>
+    <div class="nav-spinner" id="navSpinner">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <path id="circle-path" d="M 50,50 m -32,0 a 32,32 0 1,1 64,0 a 32,32 0 1,1 -64,0"/>
+        </defs>
+        <text font-family="'Space Mono', monospace" font-size="21" fill="currentColor" letter-spacing="2.5">
+          <textPath href="#circle-path"> ________________ </textPath>
+        </text>
+        <circle cx="50" cy="50" r="4" fill="var(--red)"/>
+      </svg>
+    </div>
+    <div class="nav-right">ashleymckinn@gmail.com</div>
+  </nav>
+
+  <img class="carabiner" src="../images/caribiner.png" alt="carabiner">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-name">
+      <div class="stroke">ASHLEY</div>
+      <div>McKINNON<span class="cursor"></span></div>
+    </div>
+    <div class="hero-sub">Azure Cloud Platform Engineer · Australian Bureau of Statistics · Brunswick VIC</div>
+    <div class="hero-tags">
+      <span class="chip inv">Azure</span>
+      <span class="chip inv">Cloud Platform</span>
+      <span class="chip red">CI/CD</span>
+      <span class="chip">IaC</span>
+      <span class="chip">DevOps</span>
+      <span class="chip">Bicep</span>
+      <span class="chip">PowerShell</span>
+      <span class="chip">Entra ID</span>
+      <span class="chip">Climbing</span>
+    </div>
+    <div class="status-bar">
+      <span class="live">Available for grad opportunities</span>
+      <span>Ba Information Technology · RMIT · Final Year</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <div class="sec-label"><span>001 - [Who]</span><span>Brunswick, VIC</span></div>
+  <div class="about-block">
+    <div class="about-text">
+        <p>
+          Cloud engineer working on Azure infrastructure at the Australian Bureau of Statistics. I focus on platform engineering, identity, and building CI/CD pipelines with Bicep and PowerShell in a high-governance environment.<br><br>
+
+          In my previous life I had a career in hospitality, where I worked as a baker, pastry chef and, bakery manager for 8 years. <br><br>
+
+          Final-year Information Technology student at RMIT (GPA 4.0). Outside of work, I'm usually climbing, surfing or skiing in the backcountry.
+        </p>
+    </div>
+    <div class="about-contact">
+      <div class="contact-sub">Email</div>
+      <a class="contact-line" href="mailto:ashleymckinn@gmail.com">ashleymckinn@gmail.com</a>
+      <div class="contact-sub" style="margin-top:12px;">LinkedIn</div>
+      <a class="contact-line purple" href="https://www.linkedin.com/in/ashley-mckinn/" target="_blank">linkedin.com/in/ashley-mckinn</a>
+    </div>
+  </div>
+
+  <!-- PROJECT -->
+  <div class="sec-label"><span>002 - [Project]</span><span>FrogFinder · Capstone · RMIT</span></div>
+  <div class="project-block">
+    <div class="project-inner">
+      <div class="project-left">
+        <div>
+          <div class="project-title">FROG<br><span class="red">FINDER</span><br><span class="stroke">MFCC</span></div>
+          <p class="project-desc">
+            Platform-agnostic application for automated classification of Australian frog species from environmental audio recordings. <strong>Inference runs on-device</strong> - no server dependency - built to assist researchers track frog populations over time.<br><br>
+            Currently, classifying frog calls requires a domain expert to manually review every recording. FrogFinder eliminates that bottleneck. MFCC feature extraction maps audio signals into a 2D coefficient heatmap, feeding a lightweight on-device ML model.
+          </p>
+          <div class="project-meta">
+            <div class="meta-row">Role <span>Project Lead</span></div>
+            <div class="meta-row">Context <span>RMIT Capstone · Ba. Information Technology</span></div>
+          </div>
+          <div class="proj-stack">
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">PyTorch</span>
+            <span class="proj-tag">Librosa</span>
+            <span class="proj-tag">Scikit-Learn</span>
+            <span class="proj-tag">React Native</span>
+            <span class="proj-tag">Expo</span>
+            <span class="proj-tag">Supabase</span>
+            <span class="proj-tag">MFCC</span>
+            <span class="proj-tag">Signal Processing</span>
+          </div>
+        </div>
+        <a class="project-link" href="https://github.com/S3886682/project-pobblebonk" target="_blank">→ View on GitHub</a>
+      </div>
+      <div class="project-right">
+        <div class="heatmap-label">Pobblebonk Heatmap · 13 coefficients x 60 frames</div>
+        <canvas id="heatmapCanvas" width="320" height="200" style="width:100%;max-width:320px;display:block;"></canvas>
+        <div class="heatmap-axes" style="max-width:320px;width:100%;">
+          <span>0ms</span><span>← Time →</span><span>~2000ms</span>
+        </div>
+        <div class="colorbar" style="max-width:320px;width:100%;">
+          <div class="colorbar-cell" style="background:#0a0a1a;"></div>
+          <div class="colorbar-cell" style="background:#0f1f4a;"></div>
+          <div class="colorbar-cell" style="background:#0c3a80;"></div>
+          <div class="colorbar-cell" style="background:#0060b8;"></div>
+          <div class="colorbar-cell" style="background:#0090d0;"></div>
+          <div class="colorbar-cell" style="background:#00b8e0;"></div>
+          <div class="colorbar-cell" style="background:#20d4c0;"></div>
+          <div class="colorbar-cell" style="background:#80e860;"></div>
+          <div class="colorbar-cell" style="background:#d0d020;"></div>
+          <div class="colorbar-cell" style="background:#f08000;"></div>
+          <div class="colorbar-cell" style="background:#e83000;"></div>
+          <div class="colorbar-cell" style="background:#ff2200;"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;max-width:320px;width:100%;">
+          <span style="font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:0.1em;">LOW</span>
+          <span style="font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:0.1em;">ENERGY</span>
+          <span style="font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:0.1em;">PEAK</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRAD -->
+  <div class="sec-label"><span>003 - [Academia]</span><span>RMIT · Ba Information Technology</span></div>
+  <div class="grad-block">
+    <div class="grad-hero">
+      <div class="grad-headline">
+        <div class="stroke">MAKE</div>
+        <div class="filled">ME YOUR</div>
+        <div class="red">GRAD.</div>
+      </div>
+      <div class="grad-body">
+        <div class="gpa-block">
+          <div class="gpa-num">4.0/4.0</div>
+          <div class="gpa-label">GPA · Final Year</div>
+          <div class="gpa-sub">Ba. Information Technology<br>RMIT University</div>
+        </div>
+        <div class="grad-right">
+          <div class="award-slash">
+            STEM School Dean's List 2025 <span class="dim">(Top 3%)</span> 
+            <span class="sep">/</span> <br>
+            RMIT Student Award - Finalist
+            <span class="sep">/</span> <br>
+            Student Representative 2025
+            <span class="sep">/</span> <br>
+            Project Lead - Bioacoustic Classification of Vic Frogs
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;">
+            <span class="chip inv">Cloud Architecture</span>
+            <span class="chip red">Open to grad roles</span>
+            <span class="chip">DevOps</span>
+            <span class="chip">Platform Engineering</span>
+            <span class="chip purple">SRE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slash-block">
+      <div class="slash-eyebrow">Coursework - 9 disciplines</div>
+      <div class="slash-text">
+        Cloud Computing <span class="sub">(AWS, IaC)</span>
+        <span class="sep">/</span>Cloud Security <span class="sub">(Advanced Cryptography)</span>
+        <span class="sep">/</span>Software Development <span class="sub">(Java, Python, OOP)</span>
+        <span class="sep">/</span>Networking <span class="sub">(Cisco, Virtualisation)</span>
+        <span class="sep">/</span>Cybersecurity & System Administration <span class="sub">(Unix, Scripting, AD)</span>
+        <span class="sep">/</span>Web Development & Databases
+        <span class="sep">/</span>ICT Project Management & Business Strategy
+        <span class="sep">/</span>Software Engineering <span class="sub">(Scrum, Architecture, System Design)</span>
+        <span class="sep">/</span>UX Design
+      </div>
+    </div>
+  </div>
+
+  <!-- WORK -->
+  <div class="sec-label"><span>004 - [Work]</span><span>ABS · Platform Engineering</span></div>
+  <div class="work-block">
+    <div class="work-hero">
+      <div class="abs-logo">ABS</div>
+      <div class="work-title-block">
+        <div class="work-org">Australian Bureau of Statistics</div>
+        <div class="work-role">AZURE CLOUD<br><span class="red">ENGINEER</span></div>
+        <div class="work-focus">Platform Engineering · Identity Management (Entra) · Pipelines · Bicep · PowerShell</div>
+      </div>
+    </div>
+
+    <div class="stat-strip">
+      <div class="stat-cell">
+        <div class="stat-num"><span class="red">35</span><span class="unit">min</span></div>
+        <div class="stat-desc">→ under 3 min<br>Function App pipeline refactor</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num" style="color:var(--purple)">ELZ</div>
+        <div class="stat-desc">Enterprise Landing Zone<br>Bicep pipeline overhaul</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num"><span class="red">RBAC</span></div>
+        <div class="stat-desc">State-managed data-driven<br>permissions pipeline - built from scratch</div>
+      </div>
+    </div>
+
+    <div class="pipelines-grid">
+      <div class="pipeline-card dark">
+        <div class="pc-tag">Pipeline refactor · Performance</div>
+        <div class="pc-title"><span class="red">Function App</span><br>Pipeline</div>
+        <div class="pc-desc">Complete refactor of the Function App deployment pipeline. Took runtime from ~35 minutes to under 3 minutes through architectural redesign in a production, high-governance federal environment.</div>
+        <div><span class="pc-badge inv">~92% faster</span></div>
+        <div class="pc-num" style="color:#fff;">01</div>
+      </div>
+      <div class="pipeline-card">
+        <div class="pc-tag">Pipeline overhaul · Tech-debt</div> 
+        <div class="pc-title"><span style="color:var(--purple)">Enterprise Landing Zone</span><br>Pipeline</div>
+        <div class="pc-desc">Major overhaul of the Bicep-based Enterprise Landing Zone pipeline. Reduced accumulated tech-debt, improved end-user experience and maintainability across cloud environments.</div>
+        <div><span class="pc-badge inv-purple">Bicep · IaC</span></div>
+        <div class="pc-num">02</div>
+      </div>
+      <div class="pipeline-card">
+        <div class="pc-tag">Built from scratch · State-managed</div>
+        <div class="pc-title">Azure RBAC<br><span class="red">Pipeline</span></div>
+        <div class="pc-desc">Research → design → architecture → deployment → integration testing → CI validation. State-managed, data-driven RBAC pipeline. Rollback on failure, full accountability and visibility across environments.</div>
+        <div><span class="pc-badge red">Production deployed</span></div>
+        <div class="pc-num">03</div>
+      </div>
+      <div class="pipeline-card dark">
+        <div class="pc-tag">Identity · Governance</div>
+        <div class="pc-title"><span class="red">Entra Identity</span><br>Pipeline</div>
+        <div class="pc-desc">Entra Connect (AD ↔ Azure sync), Conditional Access Policies, PIM setup, App Registrations, Policy Management. Ensuring secure identity posture across a federal, multi-environment platform.</div>
+        <div>
+          <span class="pc-badge def">CAPs</span>
+          <span class="pc-badge def">PIM</span>
+          <span class="pc-badge def">Entra Connect</span>
+        </div>
+        <div class="pc-num" style="color:#fff;">04</div>
+      </div>
+    </div>
+
+    <!-- TECH AS SLASH -->
+      <div class="tech-slash-block slash-block">
+        <div class="slash-eyebrow">Platform & Tooling</div>
+        <div class="slash-text">
+          Workflow <span class="sub">(Agile, Jira, ServiceNow)</span>
+          <span class="sep">/</span>CI/CD & Automation <span class="sub">(Azure DevOps, Pipeline Design, PowerShell)</span>
+          <span class="sep">/</span>Identity & Access Management <span class="sub">(Entra ID, RBAC, PIM, Conditional Access, App Registrations)</span>
+          <span class="sep"><br>/</span>Hybrid Identity <span class="sub">(Entra Connect, Cross-Tenant Sync)</span>
+          <span class="sep">/</span>Cloud Platform <span class="sub">(Function Apps, Storage, Networking)</span>
+          <span class="sep">/</span>Governance & Policy <span class="sub">(Policy Management, Compliance Controls)</span>
+          <span class="sep">/</span>Operations <span class="sub">(Incident Triage, Change Management)</span>
+          <span class="sep">/</span>Infrastructure as Code <span class="sub">(Bicep, ARM Templates, Landing Zones)</span>
+        </div>
+      </div>
+
+  <!-- INTERESTS -->
+  <div class="sec-label"><span>005 - [Outside work]</span><span>Brunswick</span></div>
+  <div class="interests-block">
+    <div class="interests-grid">
+      <div class="reading-card">
+        <div>
+          <div class="reading-eyebrow">Currently reading</div>
+          <div class="reading-title">K2: <br><span class="purple">Triumph and Tragedy</span></div>
+          <div class="reading-author">Edward F. Whymper</div>
+        </div>
+        <span class="reading-badge">In progress →</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FROG -->
+  <div class="frog-block">
+    <pre class="frog-art">                                                                                      :------::                                                                            ::                 -         
+                                                                                 :-+#%%@@@@@@@%%#*=-                                                                                                    
+                                                                               =*%@@@@@@%@@@%@@@@@@@%*=:                                                                                                
+                                                                             =#@@@@%%@@@@@@@@@@@@%%@@@@@#=:                                                                                             
+                                                                           :#@@%@@@@@%*+-:::-=+#%@@@@%%@@@%*- -+**+-                                                                                    
+                                                                          =%@@@@@@@%=    :---::::-+#@@@%@%@@@%@@@@@@*                                                                                   
+                                                                         =@@@@@@@@+  -*%%@@@@@@%#+-:-+%@@@@@@@@@@@%@#                                                                                   
+                                       :::          -==-                =@@@@@@@@- +%@@@@@%%%%%@@@@%*=:=#@@@@@@@@@@%:                                                                                   
+                                     -#%@@%+:     =%@@@@%-             :%@@@@@@@--%@@@@@@@@@@@@@%%%@@@%+:-#@@@@@@@@#-                                                                                   
+                                    :@@@@@@@%+:   %@@@@@@%             #@@@@@@@=+@@%@@@@@#=--=*%@@@@@@@@%+:=%@@@@@@@@*                         :::                                                      
+                                     *@@@@@%@@%+: *@@@@@@@-           =@@@@@@@#*@@@@@@@%-       -#@@@@@%@@%- +@@@%@@@@%=                     +%@@@%+   =*##*=                                           
+                                      -*@@@@@@@@%=+@@@@@@@=           #@@@@@@%#@@@@@@@#:          -*@@@@@%@@+ :*@@%@@%@@*                   +@@@@@@@=:#@@@@@@*                                          
+                                        -*@@@@@%@@@@@@@@@@#+++++=    =@@@@@@@@@@@@@@@%:             -%@@@@@@@#  =%@@@@@@@%-                 :%@@@@@@%%@%%@@%@*                                          
+                                          =%@@@@@@@@@@@@@@@@@@@@@%-  #@@@@@@@@@@@@@@@-               :#@@@@@%@#  :*@@@@@%@@=         :+###*+-#@@@@@@@@@@@@@@+                                           
+                                   :-+*##%%%@@@@@@@@@@@@@@@@%@@@@@= -@@@@@@@@@@@@@@@+                  #@%@@@%@#   =@@@@@@@@+       :%@@@@@@@@@@@@@@@@@@@@@=                                            
+                               :+#%@@@@@@@@@%@@@@@@@@@@@@@@@@%##*-  +@@@@@@@@@@@@@@%                    #@%@@@%@*   -%@@@@@@@*      :#@@@%%@@@@@@@@@@@@@@%-                                             
+                               #@@@@%%@@@@@@@@@@@@@@@@@@@@@@@%*=:   #@@@@@@@@@@@@@@=                    :%@@@@@@@=   :#@%@@@%@#       =*#@@@@@@@@@@@@@@@@%%%%%#=                                        
+                               +@@@@@@%%#*+======*%@@@@@@@@%@@@@@%*+@@@@@@@@@@@@@@%                      -@@@@@@@%:    #@%@@@%@#         -#@@@@@@@@@@@@@%@@@@@@@=                                       
+                                :=*+=-:             :-=*#%@@@@%%@@@@@@@@@@@@@@@@@@+                       +@@@@@%@*     #@@@@@%@#      :=*%@@@@@@@@@@@@@@@@@@@@#:                                       
+                                                         :=*#@@@@@%@@@@@@@@@@@@@@%:                        #@@@@@@@-     #@@@@@%@*   =*%@@@@@@@@@@@%###**++++=-                                         
+                                                             :=*%@@@@@@@@@@@@@@@@#                         -@@@@@@@#      #@@@@@@@**%@@@@%@@@@%#=:                                                      
+                                                                 :*@@@@@@@@@@@@@@+                          #@@@@@@@=     :%@@@@@@@@@%%%@@@%*=                                                          
+                                                                  +@@@@@@@%%@@@@*                           -@@@@@@@#      -@@@@@@@@@@@@%*=:                                                            
+                                                                  #@@@@@@%::-=-:                             #@@@@@@@-     +@@@@@@@@@%#=:                                                               
+                                                                 :%@@@@@@#                                   -@@%@@%@#     +@@@@@@@@@=                                                                  
+                                                                 -@@@@@@@#                                    *@@@@@@#      :*@@@@@@@*                                                                  
+                                                                 -@@@@@@@*                                     -*##*=         #@%@@@@@-                                                                 
+                                                                 -@@@@@@@*                                                    =@@@@@@@+                                                                 
+                                                                 -@@@@@@@*                                                    :%@@@@@@#                                                                 
+                                                                 -@@@@@@@#                                                     #@@@@@@%:                                                                
+                                                                 :%@@@@@@#                                                     *@@@@@@@-                                                                
+                                                                  #@@@@@@%:                                                    +@@@@@@@-                                                                
+                                                                  +@@@@@@@=                                                    +@@@@@@@-                                                                
+                                                                  -@@@@@@@*                                                    *@@@@@@@-                                                                
+                                                                   %@@@@@@%:                                                   #@@@@@@%:                                                                
+                                                                   +@@@@@@@+                                                  -@@@@@@@#                                                                 
+                                                                   :%@@@@@@%                                                  *@@@@@%@=                                                                 
+                                                                    *@@@@@@@+                                                -@%@@@%@#                                                                  
+                                                                    :%@@@@@@%:                                               =@@@@@@@-                                                                  
+                                                                     +@@@@@@@*                                                -*###*-                                                                   
+                                                                      #@@@@@@@=                                                                                                                         
+                                                                      :%@@@@@@@-                                                                                                                        
+                                                                       =@@@@@@@%:                                                                                                                       
+                                                                        +@@@@@%@%:                                                                                                                      
+                                                                         +@@@@@@@%:                                         -*##*+:                                                                     
+                                                                         :%@@@@@@@@:                                       +@@@@@@%*-                                                                   
+                                                                       -*%@@@@@@@@%:                                       +@@@%%%@@@#=                                                                 
+                                                                     -#@@@@@@@@@%=                                          -*%@@@@@@@@%=                                                               
+                                                                   =#@@@%@@@@%*-                                              :=%@@@@@@@@%=                                                             
+                                                                 =#@@@@@%@@%+:                                                   =#@@@@@@@@#:                                                           
+                                                               -#@@@@@@@@%=            -+*#*+:                                     =%@@@@@%@@=                                                          
+                                                              *@@@@@@@@%=           :+#@@@@@@@-                :=++=-                +@@@@@@@@+                                                         
+                                                            -%@@@@@@@%=          :+#@@@@%%@@@%-               +%@@@@@#+-              -%@@@@@@@=                                                        
+                                                           -%@%@@@@@*:        -+#@@@@%%@@@@#+:                #@@%%%@@@@%*=:           -@@@@@@@%                                                        
+                                                           #@%@@@@@+     :-+*%@@@@%%@@@@%+-                    +#@@@@%%@@@@%#+=:        *@@@@@@@-                                                       
+                                                          -@@@@@@@*   =*%%@@@@%%%@@@@%+-                         -+#@@@@@%%@@@@@%*+=-:  +@%@@@%@-                                                       
+                                                          -@@@@@@@#  #@@@@@@@@@@@%#+-                               :=*%@@@@@%%@@@@@@%%#%@@@@@@%:                                                       
+                                                           #@%@@@@@+ %@%@@@@@@#+-:                                      -=*%@@@@@@@@@@@@@@@@@@@#                                                        
+                                                           :%@%@@@@@#*%@@@@@@@*                                             :=+*%@@@@@@@@@@@@@@-                                                        
+                                                            :#@@%@@@@@%@@@@@@@@#:                                              +%@@@@@@@@@@@%@+                                                         
+                                                              =%@@@@@@@@@@@@@@@@%-                                            #@@@@@@@@@@@@@@#                                                          
+                                                                =%@@%@@@@@@@@@@@@@+                                          *@%@@@@@@@@@@@@%:                                                          
+                                                                  +%@@@@@@@@@@@@@@@#:                                       -@@@@@@@@@@@@@@@=                                                           
+                                                                   :+%@@@@@@@@@@@@%@%-                                      =@@@@@@@@@@@@@@*                                                            
+                                                                     :*@@%@@@@@@@@@%@@-                                     =@%@@@@@@@@@@@%                                                             
+                                                                       -#@@@@@@@@@@@%@%                                     -@@@@@@@@@@@@@=                                                             
+                                                                         =%@@@@@@@@@@@%:                                     #@%@@@@@@@@@#                                                              
+                                                                          :*@@@@@@@@@@%                                      :%@%@@@@@@@@=                                                              
+                                                                           :#@@@@@@@@@-                                       -%@@@@@@@@%                                                               
+                                                                        :+#@@@@@@@@@%-                                         :#@@@@@@@@#+:                                                            
+                                                                      =#@@@@@%%@@@#=                                             +@@@@@@@@@@#*#%%%%%###*++-:                                            
+                                                               ::--:+%@@@%%@@@@%*-                                                 +%@@@@@%@@@@@@@@@@@@@@@@@#:                                          
+                                                         :-+*#%@@@@@@@@@@@@@%+-                                                      -+%@@@@@@@@@@@@@@@@%%@@@+                                          
+                                                     -=*%@@@@@@@@@@@@@@@@@#-                                                            -@@@@@@@@@@@@@@@@@%#+                                           
+                                                 :=*%@@@@@@@@@@@@@@@@@@@@@*                                                             -@@@@@@@@@@@@@@@@@#-                                            
+                                                +%@@@@@@@@@@@@@@@@@@@@@@@@@#:                                                           :@@@@@@@@@@@@@@@%@@@*                                           
+                                               =@@%@@@@@@@@@@@@@@@@@@@@@@@@@%+                                                           #@@@@@@@@@@@@@@@@@@@+                                          
+                                               :*%@@@@@@@%@@%*%@@@@@@@@@@@@%@@-                                                          =@@@@@@@@@%@@@@@@@@#:                                          
+                                                 *@@@@@@@@%= -@@@@@@@#-*%@@@%+                                                            +%@@@%*+%@@@@@@#-:                                            
+                                                =@%@@@%@%=   #@@@@@%@-  :--:                                                                :--:  :+#%%#=                                               
+                                                *@@@@@@%-   :%@@@@@@#                                                                                                                                   
+                                                 =#%%#*:     =#@@@%#:                                                                                                                                   
+                                                               :-::                                                                                                                                     
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        </pre>
+  </div>
+
+  <footer>
+    <span>2026 - Ash McKinnon</span>
+    <span>Brunswick · Melbourne · AU</span>
+    <span>ashleymckinn@gmail.com</span>
+  </footer>
+
+  <script>
+  // MFCC HEATMAP
+  (function(){
+    const c=document.getElementById('heatmapCanvas');
+    const ctx=c.getContext('2d');
+    const W=c.width,H=c.height;
+    const COLS=60,ROWS=13;
+    const cw=W/COLS,ch=H/ROWS;
+    const palette=['#0a0a1a','#0f1f4a','#0c3a80','#0060b8','#0090d0','#00b8e0','#20d4c0','#80e860','#d0d020','#f08000','#e83000','#ff2200'];
+    function val(r,c){
+      const t=c/59,coef=r/12;
+      const base=Math.sin(t*Math.PI*2.1+coef*1.6)*0.5+0.5;
+      const formant=Math.sin(t*Math.PI*5+coef*1.1)*0.18;
+      const decay=Math.exp(-t*0.8)*0.2;
+      const n=(Math.random()-0.5)*0.08;
+      return Math.max(0,Math.min(1,base+formant+decay+n));
+    }
+    for(let r=ROWS-1;r>=0;r--){
+      for(let cc=0;cc<COLS;cc++){
+        const v=val(r,cc);
+        const idx=Math.floor(v*(palette.length-1));
+        ctx.fillStyle=palette[idx];
+        ctx.fillRect(cc*cw,(ROWS-1-r)*ch,cw,ch);
+      }
+    }
+  })();
+  </script>
+  <script>
+  // SCROLL SPINNER
+  (function(){
+    const spinner = document.getElementById('navSpinner');
+    window.addEventListener('scroll', function(){
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const deg = (window.scrollY / maxScroll) * 360 * 3;
+      spinner.style.transform = 'rotate(' + deg + 'deg)';
+    }, {passive: true});
+  })();
+  </script>
+</div>
+</body>
+</html>
