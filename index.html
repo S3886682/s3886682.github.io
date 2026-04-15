@@ -349,7 +349,7 @@
     </div>
     <div class="window-body">
       <div class="work-hero" style="position:relative;">
-        <img src="components/blue_star.svg" alt="" style="position:absolute;top:12px;right:16px;width:160px;height:auto;">
+        <img id="work-star" src="components/blue_star.svg" alt="" style="position:absolute;top:12px;right:16px;width:160px;height:auto;">
         <div class="academia-uni" style="color:var(--ink);">Azure<br><span style="color:var(--blue);">CLOUD<br>ENGINEER</span></div>
         <div class="academia-sub">Australian Bureau of Statistics · Nov 2024 – Present · Melbourne, VIC</div>
         <blockquote class="academia-quote" style="border-left-color:var(--blue);">Build and maintain production CI/CD pipelines across Azure and Entra ID in a high-governance federal environment. Multiple pipelines delivered end-to-end: from architecture and requirements through to production deployment.</blockquote>
@@ -442,7 +442,7 @@
 
   <!-- WINDOW: OUTSIDE WORK -->
   <div style="position:relative;">
-  <img src="components/apple.svg" alt="" style="position:absolute;top:50px;right:40px;width:200px;height:auto;pointer-events:none;z-index:10;transform:translateZ(0);">
+  <img id="outside-apple" src="components/apple.svg" alt="" style="position:absolute;top:50px;right:40px;width:200px;height:auto;pointer-events:none;z-index:10;">
   <div class="window">
     <div class="window-titlebar" style="background:#3a8040;">
       <span class="window-num">006</span>
@@ -534,7 +534,7 @@
     </div>
     <div class="window-body" style="position:relative;height:220px;overflow:hidden;">
       <img src="components/cloud.png" alt="" style="position:absolute;top:20px;left:20px;width:220px;height:auto;pointer-events:none;">
-      <img src="components/airplane.png" alt="" style="position:absolute;bottom:30px;right:60px;width:180px;height:auto;pointer-events:none;">
+      <img src="components/airplane.png" alt="" class="sky-airplane" style="position:absolute;bottom:30px;right:16px;width:180px;height:auto;pointer-events:none;">
       <div style="position:absolute;bottom:12px;left:16px;display:flex;gap:16px;font-family:'Space Mono',monospace;font-size:9px;color:var(--ink-dim);opacity:0.5;">
         <span>MCKINN · S3886682 · MCK · INTERNAL</span>
         <span>A01 · 2026</span>
@@ -609,6 +609,7 @@
     }
   })();
   </script>
+
 
 </div>
 </body>
