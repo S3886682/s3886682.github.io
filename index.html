@@ -269,10 +269,11 @@
           </div>
         </div>
         <!-- GPA card -->
-        <div class="stack-card">
+        <div class="stack-card" style="position:relative;overflow:hidden;">
           <div class="stack-card-eyebrow">Academic Performance</div>
           <div class="gpa-num" style="font-size:54px;">4.0<span class="gpa-denom" style="font-size:22px;">/4.0 </span></div>
           <div class="gpa-honors">Dean's List · Top 3%</div>
+          <img src="components/sun.png" alt="" style="position:absolute;bottom:12px;right:12px;width:120px;height:auto;pointer-events:none;transform:translateZ(0);">
         </div>
         <!-- Awards card -->
         <div class="stack-card">
@@ -347,7 +348,8 @@
       </div>
     </div>
     <div class="window-body">
-      <div class="work-hero">
+      <div class="work-hero" style="position:relative;">
+        <img src="components/blue_star.svg" alt="" style="position:absolute;top:12px;right:16px;width:160px;height:auto;">
         <div class="academia-uni" style="color:var(--ink);">Azure<br><span style="color:var(--blue);">CLOUD<br>ENGINEER</span></div>
         <div class="academia-sub">Australian Bureau of Statistics · Nov 2024 – Present · Melbourne, VIC</div>
         <blockquote class="academia-quote" style="border-left-color:var(--blue);">Build and maintain production CI/CD pipelines across Azure and Entra ID in a high-governance federal environment. Multiple pipelines delivered end-to-end: from architecture and requirements through to production deployment.</blockquote>
@@ -361,21 +363,20 @@
           <div class="pc-title">Function App<br>Pipeline</div>
           <div class="pc-desc">Complete refactor of the Function App deployment pipeline. Took runtime from ~35 minutes to under 3 minutes through architectural redesign in a production, high-governance federal environment.</div>
           <div><span class="pc-badge inv">~92% faster</span></div>
-          <div class="pc-num">01</div>
         </div>
         <div class="pipeline-card">
           <div class="pc-tag blue">Infrastructure · Tech-debt</div>
           <div class="pc-title">Enterprise Landing Zone<br>Pipeline</div>
           <div class="pc-desc">Major overhaul of the Bicep-based Enterprise Landing Zone pipeline. Reduced accumulated tech-debt, improved end-user experience and maintainability across multi-tenant cloud environments.</div>
           <div><span class="pc-badge inv-purple">Bicep · IaC</span></div>
-          <div class="pc-num">02</div>
+
         </div>
         <div class="pipeline-card">
           <div class="pc-tag purple">Identity · State-managed</div>
           <div class="pc-title">Azure RBAC<br>Pipeline</div>
           <div class="pc-desc">Research → design → architecture → deployment → integration testing → CI validation. State-managed, data-driven RBAC pipeline. Rollback on failure, full accountability and visibility across environments.</div>
           <div><span class="pc-badge red">Production deployed</span></div>
-          <div class="pc-num">03</div>
+
         </div>
         <div class="pipeline-card">
           <div class="pc-tag purple">Identity · Zero Trust</div>
@@ -386,7 +387,7 @@
             <span class="pc-badge def">Zero Trust</span>
             <span class="pc-badge def">Entra ID</span>
           </div>
-          <div class="pc-num">04</div>
+
         </div>
         <div class="pipeline-card">
           <div class="pc-tag purple">Identity · Just-In-Time</div>
@@ -397,7 +398,7 @@
             <span class="pc-badge def">JIT</span>
             <span class="pc-badge def">Entra ID</span>
           </div>
-          <div class="pc-num">05</div>
+
         </div>
         <div class="pipeline-card">
           <div class="pc-tag purple">Identity · Governance</div>
@@ -408,7 +409,7 @@
             <span class="pc-badge def">RBAC</span>
             <span class="pc-badge def">Governance</span>
           </div>
-          <div class="pc-num">06</div>
+
         </div>
       </div>
 
@@ -440,6 +441,8 @@
   </div>
 
   <!-- WINDOW: OUTSIDE WORK -->
+  <div style="position:relative;">
+  <img src="components/apple.svg" alt="" style="position:absolute;top:50px;right:40px;width:200px;height:auto;pointer-events:none;z-index:10;transform:translateZ(0);">
   <div class="window">
     <div class="window-titlebar" style="background:#3a8040;">
       <span class="window-num">006</span>
@@ -476,7 +479,7 @@
           </div>
         </div>
         <!-- Snowboarding: light -->
-        <div class="stack-card">
+        <div class="stack-card" style="position:relative;">
           <div class="stack-card-eyebrow">Snowboarding</div>
           <div class="stack-card-title">ALPINE</div>
           <div>
@@ -499,7 +502,7 @@
             <div class="read-row">
               <div class="read-title">K2: Triumph and Tragedy</div>
               <div class="read-author">Jim Curran</div>
-              <span class="mini-badge" style="white-space:nowrap;flex-shrink:0;">In Progress →</span>
+              <span class="mini-badge green" style="white-space:nowrap;flex-shrink:0;border-radius:999px;background:var(--green);color:#fff;border-color:var(--green);">In Progress</span>
             </div>
             <div class="read-row">
               <div class="read-title">Life Unfolding</div>
@@ -518,27 +521,26 @@
       </div>
     </div>
   </div>
+  </div>
 
-  <!-- WINDOW: FROG -->
+  <!-- WINDOW: SCENE -->
   <div class="window">
     <div class="window-titlebar" style="background:#4a4a5a;">
       <span class="window-num">·</span>
-      <span class="window-title">FROG.ASCII</span>
+      <span class="window-title">SKY.PNG</span>
       <div class="window-controls">
         <span class="win-btn"></span><span class="win-btn"></span><span class="win-btn"></span>
       </div>
     </div>
-    <div class="window-body">
-      <div class="frog-block">
-        <iframe src="components/frog-ascii.html" scrolling="no" style="width:100%;height:320px;border:none;display:block;overflow:hidden;"></iframe>
+    <div class="window-body" style="position:relative;height:220px;overflow:hidden;">
+      <img src="components/cloud.png" alt="" style="position:absolute;top:20px;left:20px;width:220px;height:auto;pointer-events:none;">
+      <img src="components/airplane.png" alt="" style="position:absolute;bottom:30px;right:60px;width:180px;height:auto;pointer-events:none;">
+      <div style="position:absolute;bottom:12px;left:16px;display:flex;gap:16px;font-family:'Space Mono',monospace;font-size:9px;color:var(--ink-dim);opacity:0.5;">
+        <span>MCKINN · S3886682 · MCK · INTERNAL</span>
+        <span>A01 · 2026</span>
       </div>
     </div>
   </div>
-
-  <footer>
-    <span>MCKINN · S3886682 · MCK · INTERNAL</span>
-    <span>A01 · 2026</span>
-  </footer>
 
   <!-- DIALOG COMPONENT -->
   <div class="dialog-overlay hidden" id="dialogOverlay" role="dialog" aria-modal="true">
