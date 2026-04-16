@@ -223,11 +223,15 @@ body::before{
 .stack-card.dark{background:var(--ink);color:var(--off);}
 .stack-card.purple-card{background:var(--purple);color:#fff;}
 .stack-card.blue-card{background:var(--blue);color:#fff;}
+.stack-card.green-card{background:var(--green);color:#fff;}
+.stack-card.yellow-card{background:var(--yellow);color:var(--ink);}
+.stack-card.red-card{background:var(--red);color:#fff;}
 .stack-card-eyebrow{font-size:8px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;}
 .stack-card-title{font-family:'Syne',sans-serif;font-size:30px;font-weight:800;line-height:0.92;letter-spacing:-0.02em;text-transform:uppercase;}
 .stack-card-desc{font-size:11px;line-height:1.6;flex:1;}
 .stack-card-badges{display:flex;flex-wrap:wrap;gap:4px;margin-top:auto;}
-.stack-card.dark .mini-badge,.stack-card.purple-card .mini-badge,.stack-card.blue-card .mini-badge{background:transparent;border-color:rgba(255,255,255,0.35);color:inherit;}
+.stack-card.dark .mini-badge,.stack-card.purple-card .mini-badge,.stack-card.blue-card .mini-badge,.stack-card.green-card .mini-badge,.stack-card.red-card .mini-badge{background:transparent;border-color:rgba(255,255,255,0.35);color:inherit;}
+.stack-card.yellow-card .mini-badge{background:transparent;border-color:rgba(0,0,0,0.25);color:var(--ink);}
 .reads-list{display:flex;flex-direction:column;gap:0;width:100%;}
 .read-row{display:flex;align-items:baseline;gap:8px;padding:7px 0;border-bottom:1px dashed var(--sep);}
 .read-row:last-child{border-bottom:none;}
